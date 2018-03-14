@@ -16,9 +16,10 @@
     'category': 'Extra Tools',
     'version': '0.1',
 
-    'depends': ['base','mrp'],
+    'depends': ['base', 'mrp'],
 
     'data': [
+        'views/extensionmrp_view.xml',
     ],
     
     'installable':True,
