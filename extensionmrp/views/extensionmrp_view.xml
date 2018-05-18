@@ -24,5 +24,17 @@
 
             </field>
         </record>
+
+        <record id="mrp_work_order_tree_view_inherited" model="ir.ui.view">
+            <field name="name">extension_work_order_tree_view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workcenter_tree_view_inherit" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='workcenter_id']" position="before">
+                    <field name="cliente_id" />
+                </xpath>
+            </field>
+        </record>
+        
     </data>
 </odoo>
