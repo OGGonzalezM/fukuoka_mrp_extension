@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="grupos_clientes_form_view" model="ir.ui.view">
+			<field name="name">grupos_clientes.form_view</field>
+			<field name="model">ops4g_fukuoka.grupos</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								<field name="name" placeholder="ej. Sinestesia" />
+							</h1>
+						</div>
+						<group>
+							<field name="color" widget="color"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="grupos_clientes_tree_view" model="ir.ui.view">
+			<field name="name">grupos_clientes.tree_view</field>
+			<field name="model">ops4g_fukuoka.grupos</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+					<field name="color" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="grupos_clientes_action" model="ir.actions.act_window">
+			<field name="name">Grupos</field>
+			<field name="res_model">ops4g_fukuoka.grupos</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem
+			id="grupos_clientes_menuitem"
+			name="Grupos"
+			action="grupos_clientes_action"
+			parent="sale.sale_order_menu"
+			/>
+	</data>
+</odoo>

@@ -7,7 +7,21 @@
 			<field name="inherit_id" ref="account.invoice_tree"></field>
 			<field name="arch" type="xml">
 				<xpath expr="//field[@name='partner_id']" position="after">
-					<field name="empresa_relacionada"></field>
+					<field name="empresa_relacionada" />
+					<field name="grupo_cliente" />
+					<field name="color_grupo" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="empresa_enfacturacion_form_view" model="ir.ui.view">
+			<field name="name">empresa_enfacturacion_form_view</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"></field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="empresa_relacionada" />
+					<field name="grupo_cliente" />
 				</xpath>
 			</field>
 		</record>

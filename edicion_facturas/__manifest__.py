@@ -10,7 +10,7 @@
         Agregado empresa o compañia relacionada en las facturas del cliente
     """,
 
-    'author': "Soluciones4G",
+    'author': "Soluciones4G OGM",
     'website': "http://www.soluciones4g.com",
 
     'category': 'Uncategorized',

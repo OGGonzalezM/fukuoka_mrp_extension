@@ -5,24 +5,20 @@ from odoo import api, fields, models
 class Empresa_cliente(models.Model):
 	_inherit = 'account.invoice'
 
-	empresa_relacionada = fields.Char(
+	empresa_relacionada = fields.Many2one(
+		'res.partner',
 		string="Empresa del cliente",
-		compute='obtener_empresa_cliente',
+		related='partner_id',
 		store=True,
 	)
 
-	@api.multi
-	@api.depends('partner_id')
-	def obtener_empresa_cliente(self):
-		for factura in self:
-			id_cliente = factura.partner_id
-			print ("*****************ID del cliente" + " " +str(id_cliente))
-			id_empresa = id_cliente.parent_id
-			print ("*****************ID de la empresa" + " " +str(id_empresa))
-			nombre_empresa = id_empresa.name
-			print ("Nombre de la empresa *******************" + " " + str(nombre_empresa))
-			if nombre_empresa:
-				factura.empresa_relacionada = str(nombre_empresa)
-			else:
-				factura.empresa_relacionada = ""
+	grupo_cliente = fields.Many2one(
+		'ops4g_fukuoka.grupos',
+		string="Grupo del cliente",
+		related='partner_id.x_fukuoka_grupo'
+	)
 
+	color_grupo = fields.Char(
+		string="Color del grupo",
+		related='grupo_cliente.color',
+	)

@@ -10,7 +10,7 @@
         Personalización para Comercializadora Fukuoka
     """,
 
-    'author': "Soluciones4G",
+    'author': "Soluciones4G OGM",
     'website': "http://www.soluciones4g.com",
 
     'category': 'Extra Tools',
