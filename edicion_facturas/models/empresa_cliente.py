@@ -12,13 +12,16 @@ class Empresa_cliente(models.Model):
 		store=True,
 	)
 
+	
 	grupo_cliente = fields.Many2one(
 		'ops4g_fukuoka.grupos',
 		string="Grupo del cliente",
-		related='partner_id.x_fukuoka_grupo'
+		related='partner_id.x_fukuoka_grupo',
+		store=True
 	)
 
 	color_grupo = fields.Char(
 		string="Color del grupo",
-		related='grupo_cliente.color',
+		related='partner_id.x_fukuoka_grupo.color',
+		store=True
 	)

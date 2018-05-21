@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
+		<record id="grupos_clientes_kanban_view" model="ir.ui.view">
+			<field name="name">grupos_clientes.kanban_view</field>
+			<field name="model">ops4g_fukuoka.grupos</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<field name="color" invisible="True"/>
+					<templates>
+						<t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click_edit oe_semantic_html_override oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}" t-attf-style="background-color: #{(record.color.raw_value)}">
+                                
+                                <div class="o_kanban_card_manage_pane">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        
+                                        <i class="fa fa-bars fa-lg"/>
+
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Eliminar</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+
+                                <div t-attf-class="o_kanban_card_content">
+                                    <h3>
+                                    	<field name="name" />
+                                    </h3>
+                                </div>
+
+                            </div>
+                        </t>
+					</templates>
+				</kanban>
+
+			</field>
+		</record>
+
 		<record id="grupos_clientes_form_view" model="ir.ui.view">
 			<field name="name">grupos_clientes.form_view</field>
 			<field name="model">ops4g_fukuoka.grupos</field>
@@ -34,14 +77,22 @@
 		<record id="grupos_clientes_action" model="ir.actions.act_window">
 			<field name="name">Grupos</field>
 			<field name="res_model">ops4g_fukuoka.grupos</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,kanban</field>
 		</record>
 
 		<menuitem
-			id="grupos_clientes_menuitem"
+			id="grupos_clientes_ventas_menuitem"
 			name="Grupos"
 			action="grupos_clientes_action"
 			parent="sale.sale_order_menu"
 			/>
+
+		<menuitem
+			id="grupos_clientes_contactos_menuitem"
+			name="Grupos"
+			action="grupos_clientes_action"
+			parent="contacts.menu_contacts"
+			/>
+
 	</data>
 </odoo>

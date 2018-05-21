@@ -16,7 +16,11 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base','account_accountant'],
+    'depends': [
+        'base',
+        'account_accountant',
+        'edicion_contactos',
+    ],
 
     'data': [
         'views/empresa_enfacturacion_view.xml',
