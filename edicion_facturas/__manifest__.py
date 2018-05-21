@@ -20,6 +20,7 @@
         'base',
         'account_accountant',
         'edicion_contactos',
+        'web_widget_color',
     ],
 
     'data': [

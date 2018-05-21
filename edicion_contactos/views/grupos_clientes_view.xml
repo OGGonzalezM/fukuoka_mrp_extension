@@ -9,12 +9,12 @@
 					<field name="color" invisible="True"/>
 					<templates>
 						<t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click_edit oe_semantic_html_override oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}" t-attf-style="background-color: #{(record.color.raw_value)}">
-                            	
+                            <div t-attf-class="oe_kanban_global_click_edit oe_semantic_html_override oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}" t-attf-style="background-color: #{(record.color.raw_value)} ">
+
                                 <div t-attf-class="o_kanban_card_content">
-                                    <h3>
+                                    <h1>
                                     	<field name="name" />
-                                    </h3>
+                                    </h1>
                                 </div>
 
                             </div>
@@ -58,7 +58,7 @@
 		<record id="grupos_clientes_action" model="ir.actions.act_window">
 			<field name="name">Grupos</field>
 			<field name="res_model">ops4g_fukuoka.grupos</field>
-			<field name="view_mode">tree,form,kanban</field>
+			<field name="view_mode">kanban,tree,form</field>
 		</record>
 
 		<menuitem

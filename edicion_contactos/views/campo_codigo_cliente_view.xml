@@ -12,7 +12,7 @@
 				</xpath>
 
 				<xpath expr="//field[@name='function']" position="before">
-					<field name="x_fukuoka_grupo"></field>
+					<field name="x_fukuoka_grupo" options="{'no_quick_create': True,'no_create_edit': True, 'no_open': True}"></field>
 				</xpath>
 
 			</field>

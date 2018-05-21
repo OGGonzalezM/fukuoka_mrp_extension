@@ -28,6 +28,7 @@
     'data': [
         'views/grupos_clientes_view.xml',
         'views/campo_codigo_cliente_view.xml',
+        'security/ir.model.access.csv',
     ],
 
     'installable': True,

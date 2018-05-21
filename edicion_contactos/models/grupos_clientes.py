@@ -4,6 +4,7 @@ from odoo import api, fields, models
 
 class GruposClientes(models.Model):
     _name = 'ops4g_fukuoka.grupos'
+    _order = 'name'
 
     name = fields.Char(
         string="Nombre del grupo",
@@ -14,3 +15,11 @@ class GruposClientes(models.Model):
     color = fields.Char(
         string="Color del grupo",
     )
+
+    _sql_constraints = [
+        (
+        	'name_uniq',
+        	'UNIQUE (name)',
+        	'¡¡Ya existe un grupo con este nombre!!'
+        )
+    ]
