@@ -23,3 +23,9 @@ class GruposClientes(models.Model):
         	'¡¡Ya existe un grupo con este nombre!!'
         )
     ]
+
+    clientes_ids = fields.One2many(
+        'res.partner',
+        'x_fukuoka_grupo',
+        string="Clientes"
+    )

@@ -39,6 +39,15 @@
 						<group>
 							<field name="color" widget="color"/>
 						</group>
+						<notebook>
+							<page string="Clientes">
+								<field name="clientes_ids" nolabel="1">
+									<tree>
+										<field name="name" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</sheet>
 				</form>
 			</field>
