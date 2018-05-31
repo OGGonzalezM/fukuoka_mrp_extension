@@ -25,6 +25,7 @@
 
     'data': [
         'views/empresa_enfacturacion_view.xml',
+        'reports/edicion_facturas_report.xml',
     ],
     'installable':True,
     'auto_install':False,

@@ -22,6 +22,9 @@
 					<field name="empresa_relacionada" />
 					<field name="grupo_cliente" />
 				</xpath>
+				<xpath expr="//field[@name='team_id']" position="after">
+					<field name="codigo_consecutivo_porgrupo" readonly="True"/>					
+				</xpath>
 			</field>
 		</record>
 

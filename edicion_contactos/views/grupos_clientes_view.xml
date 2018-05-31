@@ -38,6 +38,8 @@
 						</div>
 						<group>
 							<field name="color" widget="color"/>
+							<field name="codigo_facturas" />
+							<field name="mostrar_en_facturas" />
 						</group>
 						<notebook>
 							<page string="Clientes">

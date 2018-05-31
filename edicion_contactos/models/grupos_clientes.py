@@ -16,16 +16,30 @@ class GruposClientes(models.Model):
         string="Color del grupo",
     )
 
-    _sql_constraints = [
-        (
-        	'name_uniq',
-        	'UNIQUE (name)',
-        	'¡¡Ya existe un grupo con este nombre!!'
-        )
-    ]
 
     clientes_ids = fields.One2many(
         'res.partner',
         'x_fukuoka_grupo',
         string="Clientes"
     )
+
+    codigo_facturas = fields.Char(
+        string="Código para las facturas"
+    )
+
+    mostrar_en_facturas = fields.Boolean(
+        string="¿Mostrar consecutivo en las facturas impresas?"
+    )
+
+    _sql_constraints = [
+        (
+            'name_uniq',
+            'UNIQUE (name)',
+            '¡¡Ya existe un grupo con este nombre!!'
+        ),
+        (
+            'codigo_facturas_uniq',
+            'UNIQUE (codigo_facturas)',
+            '¡¡El código para las facturas debe ser único!!'
+        )
+    ]
