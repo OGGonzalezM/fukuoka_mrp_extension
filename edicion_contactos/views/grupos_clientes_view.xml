@@ -62,6 +62,8 @@
 				<tree>
 					<field name="name" />
 					<field name="color" />
+					<field name="codigo_facturas" />
+					<field name="mostrar_en_facturas" />
 				</tree>
 			</field>
 		</record>

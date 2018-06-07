@@ -29,6 +29,19 @@ class Empresa_cliente(models.Model):
         string="Consecutivo por grupo",
     )
 
+    ultimo_pago = fields.Char(
+        string="Fecha de pago",
+        compute='get_ultimo_pago',
+    )
+
+    @api.multi
+    def get_ultimo_pago(self):
+        for record in self:
+            pagos = record.payment_ids
+            if len(pagos) > 0:
+                ultimo_pago = pagos[0].payment_date
+                record.ultimo_pago = str(ultimo_pago)
+
     @api.multi
     def obtener_consecutivo_grupo(self, vals):
         # Asignacion del prefijo del prefijo se devuelve como un entero
@@ -47,7 +60,7 @@ class Empresa_cliente(models.Model):
         if codigo_grupo_facturas_cliente != ' ' or codigo_grupo_facturas_cliente != False:
             matricula_numeral = self.env['folio.datos'].get_folio(codigo_grupo_facturas_cliente)
         else:
-            codigo_grupo_facturas_cliente = "DEMO"
+            codigo_grupo_facturas_cliente = "Demo"
             matricula_numeral = self.env['folio.datos'].get_folio("Demo")
 
         # Matricula en string
