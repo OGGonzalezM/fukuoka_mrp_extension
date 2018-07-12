@@ -15,12 +15,15 @@
 				<xpath expr="//field[@name='partner_id']" position="after">
 					<field name="empresa_relacionada" />
 					<field name="grupo_cliente" />
+				</xpath>
+
+				<xpath expr="//field[@name='residual_signed']" position="before">
 					<field name="ultimo_pago" />
 				</xpath>
 
-				<!-- <xpath expr="//field[@name='origin']" position="attributes">
+				<xpath expr="//field[@name='origin']" position="attributes">
 					<attribute name="invisible">True</attribute>
-				</xpath> -->
+				</xpath>
 
 			</field>
 		</record>
